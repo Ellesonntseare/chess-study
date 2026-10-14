@@ -1,0 +1,4 @@
+const DB='chess-study-v1';
+function open(){return new Promise((resolve,reject)=>{const r=indexedDB.open(DB,1);r.onupgradeneeded=()=>r.result.createObjectStore('library',{keyPath:'id'});r.onsuccess=()=>resolve(r.result);r.onerror=()=>reject(r.error);});}
+export async function loadGames(){const db=await open();return new Promise((resolve,reject)=>{const tx=db.transaction('library');const r=tx.objectStore('library').getAll();r.onsuccess=()=>resolve(r.result);r.onerror=()=>reject(r.error);tx.oncomplete=()=>db.close();});}
+export async function saveGames(games){const db=await open();return new Promise((resolve,reject)=>{const tx=db.transaction('library','readwrite');for(const g of games)tx.objectStore('library').put(g);tx.oncomplete=()=>{db.close();resolve();};tx.onerror=()=>{db.close();reject(tx.error);};});}

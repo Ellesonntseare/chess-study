@@ -1,0 +1,8 @@
+{
+  "appId": "com.elleson.chessstudy",
+  "appName": "Chess Study",
+  "webDir": "dist",
+  "backgroundColor": "#101816",
+  "android": {"backgroundColor": "#101816", "allowMixedContent": false},
+  "server": {"androidScheme": "https"}
+}
