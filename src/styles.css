@@ -8,7 +8,7 @@
 .mobile-tools{display:none}
 @media(max-width:700px){
   body{padding-bottom:calc(76px + env(safe-area-inset-bottom));-webkit-tap-highlight-color:transparent}
-  .sidebar{padding-top:calc(10px + env(safe-area-inset-top));padding-bottom:10px;background:#142019f5;backdrop-filter:blur(14px)}
+  .sidebar{padding-top:calc(10px + env(safe-area-inset-top));padding-bottom:10px;background:#142019f5;backdrop-filter:none}
   .sidebar:after{content:'STOCKFISH 19';margin-left:auto;letter-spacing:1.2px;font-size:8px;color:#adc88f}
   .sidebar nav{position:fixed;bottom:0;left:0;right:0;width:100%;height:calc(66px + env(safe-area-inset-bottom));padding:4px 12px calc(4px + env(safe-area-inset-bottom));background:#16201bfa;border-top:1px solid #384630;z-index:30;justify-content:space-around;backdrop-filter:blur(15px)}
   .sidebar nav button{display:flex;flex-direction:column;gap:2px;flex:1;font-size:10px;padding:5px 8px;justify-content:center;min-height:48px;border-radius:8px}
@@ -22,3 +22,6 @@
   .square{touch-action:manipulation}.player{height:33px}.analysis-panel .primary,.coach-card button,.pattern-card button{min-height:44px}.move-row button{min-height:43px}.move-list{max-height:230px}.game-item{min-height:60px}.variation button{min-height:40px}.promotion button{min-height:44px}
   footer{padding-bottom:15px}
 }
+
+.square img.black-piece{filter:drop-shadow(1px 0 0 #ddd) drop-shadow(-1px 0 0 #ddd) drop-shadow(0 1px 0 #ddd) drop-shadow(0 -1px 0 #ddd)}
+@media(max-width:370px){.board-controls button{min-width:34px;padding:5px 4px}.board-controls{gap:2px}.sidebar nav button{font-size:9px}}

@@ -1,0 +1,3 @@
+* text=auto
+public/engine/*.js -text
+*.wasm binary
